@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Easy · Mockup onboarding trabajador · El oficio fácil de encontrar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFCFF; --paper:#fff; --ink:#1B1A17; --ink-2:#3A3934;
+  --ink-3:#6F6D66; --line:#D9E4F2;
+  --brand:#0047BA;          /* naranja talento */
+  --brand-d:#003896;
+  --acc:#0AA86A;            /* verde confianza */
+  --acc-d:#048d54;
+  --warm:#FBC02D;           /* amarillo cálido */
+  --rose:#E3F2FD;
+  --pale:#F0F7FF;
+  --shadow:0 12px 28px -16px rgba(0,71,186,.18);
+  --shadow-lg:0 22px 50px -18px rgba(0,71,186,.22);
+  --fs:'Inter Tight',system-ui,sans-serif;
+  --fh:'Caveat',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--fs);font-size:15px;line-height:1.5}
+body{
+  background:
+    radial-gradient(ellipse 600px 400px at 10% -5%, #DBE9FF, transparent 60%),
+    radial-gradient(ellipse 500px 350px at 95% 100%, #F0F7FF, transparent 55%),
+    var(--bg);
+  min-height:100vh;
+  padding:32px 0 80px;
+}
+.lab{max-width:1340px;margin:0 auto;padding:0 24px}
+/* Top intro */
+.lab-head{text-align:center;margin-bottom:38px}
+.lab-head .eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brand);background:var(--rose);padding:6px 12px;border-radius:99px;margin-bottom:12px}
+.lab-head h1{font-size:clamp(28px,4.5vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.05;margin-bottom:8px}
+.lab-head h1 em{font-family:var(--fh);font-style:normal;font-weight:700;color:var(--brand);font-size:1.18em;display:inline-block;transform:rotate(-2deg);line-height:.9}
+.lab-head p{color:var(--ink-3);font-size:15px;max-width:60ch;margin:0 auto}
+/* Frame de iPhone */
+.screens{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,360px));gap:32px;justify-content:center;align-items:start}
+.frame{background:#0e0e10;padding:14px 12px 14px;border-radius:46px;box-shadow:var(--shadow-lg);position:relative;width:100%;max-width:360px;margin:0 auto}
+.frame::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:90px;height:24px;background:#0e0e10;border-radius:99px;z-index:5}
+.frame::after{content:"";position:absolute;top:26px;left:50%;transform:translate(28px,0);width:8px;height:8px;background:#1f1f24;border-radius:50%;z-index:6}
+.screen{background:var(--paper);border-radius:34px;overflow:hidden;height:684px;display:flex;flex-direction:column;position:relative}
+.screen-cap{font-size:11px;color:var(--ink-3);text-align:center;margin-top:12px;letter-spacing:.06em;font-weight:600;text-transform:uppercase}
+.screen-cap span{display:block;margin-top:3px;color:var(--brand);font-family:var(--fh);font-size:18px;font-weight:700;text-transform:none;letter-spacing:0}
+/* Status bar */
+.status{display:flex;justify-content:space-between;align-items:center;padding:14px 22px 0;font-size:13px;font-weight:600;color:var(--ink)}
+.status-icons{display:flex;gap:6px;font-size:12px;opacity:.7}
+/* Scroll body */
+.body{flex:1;overflow:hidden;padding:18px 22px 24px;display:flex;flex-direction:column}
+.body-c{flex:1;overflow-y:auto;display:flex;flex-direction:column}
+
+/* Logo */
+.logo{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.logo-mark{width:38px;height:38px;background:var(--brand);border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;box-shadow:0 6px 16px -8px var(--brand)}
+.logo-txt{font-weight:800;font-size:18px;letter-spacing:-.02em}
+.logo-txt span{color:var(--brand)}
+
+/* === SCREEN 1: BIENVENIDA === */
+.s1-illu{width:100%;aspect-ratio:1.05;background:linear-gradient(135deg,#DBE9FF 0%,#F0F7FF 100%);border-radius:24px;position:relative;overflow:hidden;margin-top:8px;box-shadow:inset 0 -1px 0 rgba(0,0,0,.04)}
+.s1-illu .badge-circ{position:absolute;width:78px;height:78px;background:var(--paper);border-radius:50%;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--ink);text-align:center;line-height:1.1}
+.s1-illu .badge-circ .ico{font-size:26px;margin-bottom:2px}
+.b1{top:14%;left:8%;animation:float 4s ease-in-out infinite}
+.b2{top:48%;right:6%;background:var(--brand);color:#fff;animation:float 4s ease-in-out infinite .8s;width:90px;height:90px}
+.b3{bottom:8%;left:18%;animation:float 4s ease-in-out infinite 1.6s;width:72px;height:72px}
+.b4{top:14%;right:12%;background:var(--acc);color:#fff;width:60px;height:60px;animation:float 4s ease-in-out infinite 2.4s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.s1-illu .deco{position:absolute;font-family:var(--fh);font-weight:700;color:var(--brand-d);font-size:20px;transform:rotate(-8deg);bottom:36%;right:18%;opacity:.6}
+
+.s1-title{font-size:28px;font-weight:800;line-height:1.1;letter-spacing:-.02em;margin:22px 0 8px}
+.s1-title em{font-family:var(--fh);font-style:normal;color:var(--brand);font-size:1.28em;font-weight:700;display:inline-block;transform:rotate(-2deg)}
+.s1-sub{color:var(--ink-3);font-size:14.5px;line-height:1.5}
+
+.s1-bullets{margin:18px 0 20px;display:flex;flex-direction:column;gap:10px}
+.s1-bul{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink-2);font-weight:500}
+.s1-bul .dot{width:22px;height:22px;background:var(--pale);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--brand);font-weight:900;font-size:13px;flex-shrink:0;margin-top:1px}
+
+.btn{display:flex;align-items:center;justify-content:center;width:100%;background:var(--brand);color:#fff;font-weight:700;font-size:16px;padding:16px 20px;border-radius:14px;border:0;cursor:pointer;transition:transform .15s,background .15s;letter-spacing:-.01em;box-shadow:0 8px 22px -12px var(--brand)}
+.btn:hover{background:var(--brand-d)}
+.btn:active{transform:scale(.98)}
+.btn-ghost{background:transparent;color:var(--ink-2);box-shadow:none;border:1px solid var(--line);margin-top:10px}
+.btn-ghost:hover{background:var(--pale)}
+
+/* === SCREEN 2: OFICIO === */
+.step-bar{display:flex;gap:6px;margin:14px 0 18px}
+.step{flex:1;height:6px;background:var(--line);border-radius:99px;overflow:hidden}
+.step.on{background:var(--brand)}
+.step-lab{font-size:12px;color:var(--ink-3);font-weight:600;letter-spacing:.04em;margin-bottom:8px}
+.s2-q{font-size:22px;font-weight:800;line-height:1.15;letter-spacing:-.018em;margin-bottom:6px}
+.s2-q em{color:var(--brand);font-style:normal}
+.s2-help{font-size:13.5px;color:var(--ink-3);margin-bottom:18px}
+
+.search-bar{display:flex;align-items:center;gap:10px;background:var(--pale);border:1.5px solid var(--line);padding:13px 16px;border-radius:13px;margin-bottom:14px}
+.search-bar input{border:0;background:transparent;flex:1;font-family:inherit;font-size:14px;outline:none;color:var(--ink)}
+.search-bar input::placeholder{color:var(--ink-3)}
+
+.oficios{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:1}
+.of{padding:14px 12px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--paper);transition:all .15s}
+.of:hover{border-color:var(--brand);background:var(--rose)}
+.of.on{border-color:var(--brand);background:var(--rose);box-shadow:inset 0 0 0 1px var(--brand)}
+.of .ico{width:48px;height:48px;border-radius:14px;background:var(--pale);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:8px}
+.of.on .ico{background:#fff}
+.of .name{font-size:13px;font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:1px}
+.of .meta{font-size:11px;color:var(--ink-3);font-weight:500}
+
+/* === SCREEN 3: PERFIL ZONA === */
+.s3-photo-up{width:100%;aspect-ratio:1.6;background:var(--pale);border:2px dashed var(--brand);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--brand);text-align:center;margin-bottom:18px;cursor:pointer;position:relative;overflow:hidden}
+.s3-photo-up .ico{font-size:38px;margin-bottom:6px}
+.s3-photo-up .lab{font-weight:700;font-size:14px}
+.s3-photo-up .help{font-size:11px;color:var(--ink-3);font-weight:500;margin-top:2px}
+.s3-photo-up .badge{position:absolute;top:10px;right:10px;background:var(--brand);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:99px;letter-spacing:.05em}
+
+.label{font-size:12px;font-weight:700;color:var(--ink-2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.field{display:flex;flex-direction:column;margin-bottom:14px}
+.input{padding:13px 15px;border:1.5px solid var(--line);border-radius:11px;font-family:inherit;font-size:14.5px;color:var(--ink);background:var(--paper);outline:none;transition:border-color .15s}
+.input:focus{border-color:var(--brand)}
+
+.zonas{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.z{padding:9px 13px;border-radius:99px;border:1.5px solid var(--line);background:var(--paper);font-size:12.5px;font-weight:600;color:var(--ink-2);cursor:pointer}
+.z:hover{border-color:var(--brand);color:var(--ink)}
+.z.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.z .ico{margin-right:3px}
+
+.checkbox-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--pale);border-radius:11px;margin-top:8px}
+.checkbox-row .cb{width:22px;height:22px;border-radius:6px;border:2px solid var(--brand);background:var(--brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;flex-shrink:0}
+.checkbox-row .lab{font-size:13px;color:var(--ink-2);font-weight:500}
+
+/* === SCREEN 4: ¡LISTO! === */
+.s4-card{background:linear-gradient(135deg,#DBE9FF 0%, #F0F7FF 100%);border-radius:22px;padding:24px 22px 22px;text-align:center;margin:8px 0 16px;position:relative;overflow:hidden}
+.s4-card::before{content:"";position:absolute;width:140px;height:140px;background:var(--brand);border-radius:50%;top:-70px;right:-70px;opacity:.12}
+.s4-check{width:78px;height:78px;background:var(--acc);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:38px;font-weight:900;margin:0 auto 14px;box-shadow:0 12px 30px -10px var(--acc);position:relative;z-index:1;animation:pop .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{0%{transform:scale(0)}100%{transform:scale(1)}}
+.s4-title{font-size:24px;font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:6px;position:relative;z-index:1}
+.s4-title em{font-family:var(--fh);color:var(--brand);font-style:normal;font-size:1.3em;display:inline-block;transform:rotate(-3deg)}
+.s4-sub{color:var(--ink-2);font-size:13.5px;line-height:1.5;position:relative;z-index:1}
+
+.profile-card{display:flex;gap:12px;align-items:center;padding:14px;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;margin-bottom:14px}
+.profile-pic{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#0047BA 0%, #2962FF 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:21px;flex-shrink:0}
+.profile-info{flex:1;min-width:0}
+.profile-info .name{font-weight:800;font-size:16px;letter-spacing:-.01em;line-height:1.1;margin-bottom:3px}
+.profile-info .of{font-size:12.5px;color:var(--brand);font-weight:700}
+.profile-info .zo{font-size:11.5px;color:var(--ink-3);margin-top:2px}
+.profile-stats{display:flex;gap:20px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);justify-content:space-around;margin-bottom:14px}
+.ps{text-align:center}
+.ps .v{font-weight:800;font-size:18px;color:var(--ink);line-height:1}
+.ps .k{font-size:10.5px;color:var(--ink-3);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:3px}
+
+.next-list{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.nx{display:flex;gap:10px;align-items:center;padding:11px 13px;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;cursor:pointer}
+.nx:hover{border-color:var(--brand)}
+.nx .ico{width:34px;height:34px;background:var(--pale);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.nx .txt{flex:1;font-size:13px;font-weight:600;color:var(--ink)}
+.nx .arrow{color:var(--ink-3);font-weight:700}
+
+/* footer notes */
+.notes{margin-top:60px;padding:32px;background:var(--paper);border:1.5px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
+.notes h2{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+.notes h2 em{color:var(--brand);font-family:var(--fh);font-style:normal;font-size:1.18em}
+.notes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:14px}
+.note{padding:18px 18px;border-left:4px solid var(--brand);background:var(--pale);border-radius:0 12px 12px 0}
+.note .num{font-weight:800;color:var(--brand);font-size:13px;margin-bottom:6px;letter-spacing:.04em}
+.note .h{font-weight:800;font-size:15px;line-height:1.2;letter-spacing:-.01em;margin-bottom:6px;color:var(--ink)}
+.note p{font-size:13px;color:var(--ink-2);line-height:1.5}
+.note.acc{border-color:var(--acc);background:rgba(10,168,106,.07)}
+.note.acc .num{color:var(--acc-d)}
+
+@media(max-width:760px){
+  .screens{grid-template-columns:1fr}
+  .frame{max-width:340px}
+}
+</style>
+</head>
+<body>
+<div class="lab">
+
+<div class="lab-head">
+  <span class="eyebrow">Easy · Onboarding trabajador</span>
+  <h1>Cómo se inscribe un <em>mecánico</em>, costurera o electricista en Easy</h1>
+  <p>Cuatro pantallas. Tres minutos. Sin formularios complicados ni exigencia de email. Diseñado para personas con baja alfabetización digital y planes de datos limitados. Iniciativa de tejido social de Alejandría Steam Labs.</p>
+</div>
+
+<div class="screens">
+
+  <!-- ============== SCREEN 1: BIENVENIDA ============== -->
+  <div>
+    <div class="frame"><div class="screen">
+      <div class="status"><span>9:41</span><div class="status-icons"><span>📶</span><span>📡</span><span>🔋</span></div></div>
+      <div class="body"><div class="body-c">
+        <div class="logo">
+          <div class="logo-mark">E</div>
+          <div class="logo-txt">Easy<span>.</span></div>
+        </div>
+
+        <div class="s1-illu">
+          <div class="badge-circ b1"><span class="ico">🔧</span>Mecánicos</div>
+          <div class="badge-circ b2"><span class="ico">⚡</span>Electricistas</div>
+          <div class="badge-circ b3"><span class="ico">✂️</span>Costureras</div>
+          <div class="badge-circ b4"><span class="ico">🪚</span>Carpinteros</div>
+          <div class="deco">+ tu oficio</div>
+        </div>
+
+        <h1 class="s1-title">Tu oficio merece <em>ser visto</em></h1>
+        <p class="s1-sub">Easy conecta a clientes de tu zona con personas que saben hacer las cosas. Empezá hoy gratis, sin cuotas mensuales.</p>
+
+        <div class="s1-bullets">
+          <div class="s1-bul"><span class="dot">✓</span><span>No cobramos comisión por trabajo cerrado</span></div>
+          <div class="s1-bul"><span class="dot">✓</span><span>Funciona aunque tengas poca señal</span></div>
+          <div class="s1-bul"><span class="dot">✓</span><span>Apoyado por Alejandría Steam Labs</span></div>
+        </div>
+
+        <button class="btn">Empezar — toma 3 minutos</button>
+        <button class="btn btn-ghost">Ya tengo cuenta</button>
+      </div></div>
+    </div></div>
+    <div class="screen-cap">Pantalla 1<span>Bienvenida cálida sin pedir email</span></div>
+  </div>
+
+  <!-- ============== SCREEN 2: OFICIO ============== -->
+  <div>
+    <div class="frame"><div class="screen">
+      <div class="status"><span>9:42</span><div class="status-icons"><span>📶</span><span>📡</span><span>🔋</span></div></div>
+      <div class="body"><div class="body-c">
+        <div class="step-bar"><div class="step on"></div><div class="step on"></div><div class="step"></div><div class="step"></div></div>
+        <div class="step-lab">Paso 2 de 4 · Tu oficio</div>
+
+        <h1 class="s2-q">¿Qué <em>sabés hacer</em>?</h1>
+        <p class="s2-help">Escogé el que más hacés. Después podés agregar más.</p>
+
+        <div class="search-bar">
+          <span style="font-size:16px;opacity:.5">🔍</span>
+          <input placeholder="Buscar tu oficio…">
+        </div>
+
+        <div class="oficios">
+          <div class="of on"><div class="ico">🔧</div><div class="name">Mecánico</div><div class="meta">de carros</div></div>
+          <div class="of"><div class="ico">⚡</div><div class="name">Electricista</div><div class="meta">domiciliar</div></div>
+          <div class="of"><div class="ico">✂️</div><div class="name">Costurera</div><div class="meta">/ sastre</div></div>
+          <div class="of"><div class="ico">🚿</div><div class="name">Plomero</div><div class="meta">y fontanero</div></div>
+          <div class="of"><div class="ico">🧱</div><div class="name">Albañil</div><div class="meta">y construcción</div></div>
+          <div class="of"><div class="ico">🪚</div><div class="name">Carpintero</div><div class="meta">muebles y mant.</div></div>
+          <div class="of"><div class="ico">🎨</div><div class="name">Pintor</div><div class="meta">de casas</div></div>
+          <div class="of"><div class="ico">❄️</div><div class="name">A/C y refri</div><div class="meta">técnico</div></div>
+        </div>
+
+        <button class="btn" style="margin-top:14px">Continuar →</button>
+      </div></div>
+    </div></div>
+    <div class="screen-cap">Pantalla 2<span>Oficios con íconos grandes y claros</span></div>
+  </div>
+
+  <!-- ============== SCREEN 3: PERFIL Y ZONA ============== -->
+  <div>
+    <div class="frame"><div class="screen">
+      <div class="status"><span>9:43</span><div class="status-icons"><span>📶</span><span>📡</span><span>🔋</span></div></div>
+      <div class="body"><div class="body-c">
+        <div class="step-bar"><div class="step on"></div><div class="step on"></div><div class="step on"></div><div class="step"></div></div>
+        <div class="step-lab">Paso 3 de 4 · Tu zona y foto</div>
+
+        <h1 class="s2-q">Que te <em>encuentren</em></h1>
+        <p class="s2-help">Una foto y tu zona generan 5× más contactos.</p>
+
+        <div class="s3-photo-up">
+          <div class="badge">RECOMENDADO</div>
+          <div class="ico">📷</div>
+          <div class="lab">Subí una foto tuya o de tu trabajo</div>
+          <div class="help">Genera más confianza · podés cambiarla luego</div>
+        </div>
+
+        <div class="field">
+          <label class="label">Tu nombre</label>
+          <input class="input" value="Carlos Mendoza" />
+        </div>
+
+        <div class="field">
+          <label class="label">Tu zona principal de trabajo</label>
+          <div class="zonas">
+            <div class="z"><span class="ico">📍</span>Santa Tecla</div>
+            <div class="z on"><span class="ico">📍</span>Soyapango</div>
+            <div class="z"><span class="ico">📍</span>Mejicanos</div>
+            <div class="z"><span class="ico">📍</span>San Marcos</div>
+            <div class="z"><span class="ico">📍</span>Apopa</div>
+            <div class="z"><span class="ico">📍</span>+ más</div>
+          </div>
+        </div>
+
+        <div class="checkbox-row">
+          <div class="cb">✓</div>
+          <div class="lab">Quiero recibir clientes por <strong>WhatsApp</strong></div>
+        </div>
+
+        <button class="btn" style="margin-top:16px">Continuar →</button>
+      </div></div>
+    </div></div>
+    <div class="screen-cap">Pantalla 3<span>Foto + zona + WhatsApp en 1 vista</span></div>
+  </div>
+
+  <!-- ============== SCREEN 4: LISTO + PRIMEROS PASOS ============== -->
+  <div>
+    <div class="frame"><div class="screen">
+      <div class="status"><span>9:44</span><div class="status-icons"><span>📶</span><span>📡</span><span>🔋</span></div></div>
+      <div class="body"><div class="body-c">
+        <div class="step-bar"><div class="step on"></div><div class="step on"></div><div class="step on"></div><div class="step on"></div></div>
+        <div class="step-lab">¡Bien hecho!</div>
+
+        <div class="s4-card">
+          <div class="s4-check">✓</div>
+          <h1 class="s4-title">Tu perfil <em>está listo</em></h1>
+          <p class="s4-sub">Ya podés recibir clientes en Soyapango. El asistente AKASHA-PyME te va a ayudar a cotizar y crecer tu negocio.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-pic">CM</div>
+          <div class="profile-info">
+            <div class="name">Carlos Mendoza</div>
+            <div class="of">Mecánico de carros</div>
+            <div class="zo">📍 Soyapango · disponible hoy</div>
+          </div>
+        </div>
+
+        <div class="profile-stats">
+          <div class="ps"><div class="v">0</div><div class="k">Trabajos</div></div>
+          <div class="ps"><div class="v">★ —</div><div class="k">Rating</div></div>
+          <div class="ps"><div class="v">100%</div><div class="k">Perfil</div></div>
+        </div>
+
+        <div class="next-list">
+          <div class="nx"><div class="ico">📝</div><div class="txt">Hacer mi 1° cotización con AKASHA-PyME</div><div class="arrow">→</div></div>
+          <div class="nx"><div class="ico">💬</div><div class="txt">Conectar mi WhatsApp</div><div class="arrow">→</div></div>
+          <div class="nx"><div class="ico">📣</div><div class="txt">Compartir mi perfil</div><div class="arrow">→</div></div>
+        </div>
+
+        <button class="btn">Ver mi panel</button>
+      </div></div>
+    </div></div>
+    <div class="screen-cap">Pantalla 4<span>Perfil listo + primeras acciones</span></div>
+  </div>
+
+</div>
+
+<!-- Notas de diseño para director -->
+<div class="notes">
+  <h2>Por qué este onboarding <em>funciona</em> para personas de bajos recursos</h2>
+  <div class="notes-grid">
+    <div class="note">
+      <div class="num">01</div>
+      <div class="h">Sin email obligatorio</div>
+      <p>El número de WhatsApp es el ID. Muchos trabajadores no usan email activo.</p>
+    </div>
+    <div class="note">
+      <div class="num">02</div>
+      <div class="h">Íconos grandes y emoji</div>
+      <p>Reconocimiento visual antes que lectura. Funciona aunque la lectura sea limitada.</p>
+    </div>
+    <div class="note">
+      <div class="num">03</div>
+      <div class="h">Foto = más clientes</div>
+      <p>Mensaje claro de que la foto duplica resultados. Incentivo positivo, no exigencia.</p>
+    </div>
+    <div class="note">
+      <div class="num">04</div>
+      <div class="h">3 minutos máximo</div>
+      <p>Barra de progreso visible. Cero campos opcionales que confundan.</p>
+    </div>
+    <div class="note acc">
+      <div class="num">05</div>
+      <div class="h">Sin comisión</div>
+      <p>El workshop comunitario gana confianza al ver el modelo. No es PedidosYa.</p>
+    </div>
+    <div class="note acc">
+      <div class="num">06</div>
+      <div class="h">AKASHA integrado desde el min 1</div>
+      <p>El primer call-to-action post-onboarding es generar una cotización con AI.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
